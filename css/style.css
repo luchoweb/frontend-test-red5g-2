@@ -1,0 +1,60 @@
+:root {
+  --fw-normal: 400;
+  --fw-bold: 700;
+  --color-bg: #FAFBFF;
+}
+
+body {
+  background-color: var(--color-bg);
+  font-family: "Proxima Nova Rg", sans-serif;
+  font-size: 16px;
+  font-weight: var(--fw-normal);
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong {
+  font-weight: var(--fw-bold);
+}
+
+.header {
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+  width: 100%;
+}
+.header-bg {
+  background-color: #c6d5f4;
+  border-radius: 64px;
+  height: 390px;
+  overflow: hidden;
+  position: absolute;
+  top: -9.5rem;
+  left: 1.5rem;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+}
+.header-bg::before {
+  content: "";
+  box-shadow: inset 0px 3px 16px rgba(28, 63, 119, 0.462745098);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.header-bg img {
+  margin-top: 6rem;
+  height: 305px;
+  object-fit: cover;
+  transform: rotate(-45deg);
+  width: 135%;
+}

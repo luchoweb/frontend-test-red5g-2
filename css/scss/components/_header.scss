@@ -1,0 +1,37 @@
+.header {
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+  width: 100%;
+
+  &-bg {
+    background-color: #c6d5f4;
+    border-radius: 64px;
+    height: 390px;
+    overflow: hidden;
+    position: absolute;
+    top: -9.5rem;
+    left: 1.5rem;
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+
+    &::before {
+      content: "";
+      box-shadow: inset 0px 3px 16px #1C3F7776;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+
+    img {
+      margin-top: 6rem;
+      height: 305px;
+      object-fit: cover;
+      transform: rotate(-45deg);
+      width: 135%;
+    }
+  }
+}

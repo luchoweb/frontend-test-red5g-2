@@ -186,13 +186,15 @@ strong {
   margin-bottom: 1.5rem;
 }
 .loans-list .loan-box {
-  align-items: center;
   cursor: pointer;
+  padding: 40px 40px 24px 40px;
+}
+.loans-list .loan-content {
+  align-items: center;
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-template-rows: 2fr;
   gap: 1rem 0;
-  padding: 40px 40px 20px 40px;
 }
 .loans-list .loan-icon {
   display: grid;
@@ -217,5 +219,5 @@ strong {
   color: var(--color-text);
   grid-column: span 2;
   line-height: 24px;
-  margin-top: 0;
+  margin: 0;
 }

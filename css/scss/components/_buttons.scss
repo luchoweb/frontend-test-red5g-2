@@ -1,0 +1,22 @@
+.btn {
+  appearance: none;
+  background: none;
+  border: none;
+  border-radius: 32px;
+  cursor: pointer;
+  padding: 14px 20px;
+
+  &-primary {
+    background: transparent linear-gradient(180deg, #05bcfd 0%, #0599fb 100%) 0%
+      0% no-repeat padding-box;
+    box-shadow: 0px 16px 16px #007af829;
+    color: white;
+    font-weight: var(--fw-bold);
+  }
+
+  &-light {
+    background-color: white;
+    box-shadow: 0px 16px 16px #4676C32C;
+    color: var(--color-blue);
+  }
+}

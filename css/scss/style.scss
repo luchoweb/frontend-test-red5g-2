@@ -1,6 +1,7 @@
 :root {
   --fw-normal: 400;
   --fw-bold: 700;
+  --ff-body: "Proxima Nova Rg", sans-serif;
 
   --color-bg: #fafbff;
   --color-bg-blue: #ebf0ff;
@@ -22,7 +23,7 @@
 body {
   background-color: var(--color-bg);
   color: var(--color-dark);
-  font-family: "Proxima Nova Rg", sans-serif;
+  font-family: var(--ff-body);
   font-size: 16px;
   font-weight: var(--fw-normal);
   margin: 0;

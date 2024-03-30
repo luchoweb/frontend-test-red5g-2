@@ -51,12 +51,46 @@
                 <picture class="loan-icon">
                   <img src="images/icon-house.png" alt="house" />
                 </picture>
-  
+
                 <p class="loan-name">Crédito hipotecario Mi techo yá</p>
-  
+
                 <p class="loan-description">
                   ¡Para familias jóvenes que aspiran a su primer hogar!
                 </p>
+              </div>
+
+              <div class="loan-form calculator">
+                <div class="loan-form-group">
+                  <input type="text" id="amount" autocomplete="off" required />
+                  <label for="amount">Monto</label>
+                </div>
+
+                <div class="loan-form-group">
+                  <input
+                    type="number"
+                    id="term"
+                    autocomplete="off"
+                    min="1"
+                    required
+                  />
+                  <label for="term">Plazo (meses)</label>
+                </div>
+
+                <div class="loan-form-result">
+                  <p class="result-fee">
+                    $ <span id="fee">2.743.774</span>,<small>00</small>
+                  </p>
+                  <p class="result-text">Cuota mensual aproximada</p>
+                  <p class="result-disclaimer">
+                    Esta simulación es un aproximado calculado con una tasa del
+                    <strong>00.00% E.A</strong>
+                  </p>
+                </div>
+
+                <div class="loan-form-buttons">
+                  <button class="btn btn-primary">¡Lo quiero!</button>
+                  <button class="btn btn-light">Simular otro producto</button>
+                </div>
               </div>
             </div>
           </li>
@@ -67,9 +101,9 @@
                 <picture class="loan-icon">
                   <img src="images/icon-car.png" alt="car" />
                 </picture>
-  
+
                 <p class="loan-name">Crédito para vehículos</p>
-  
+
                 <p class="loan-description">
                   ¡Compra esa nave con la que siempre has soñado!
                 </p>

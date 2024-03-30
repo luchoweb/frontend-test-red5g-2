@@ -3,6 +3,7 @@
   --padding-btn: 20px;
   --padding-form: 28px;
   --height-btn: 88px;
+  --question-number-size: 32px;
 
   background-color: var(--color-bg-modal);
   position: fixed;
@@ -24,16 +25,79 @@
     position: sticky;
     top: 0;
     width: calc(100% - (var(--padding-steps) * 2));
+    z-index: 1;
   }
 
   &-form {
     padding: var(--padding-form);
+    padding-bottom: var(--height-btn);
+    position: relative;
+    overflow-y: auto;
+    height: 80dvh;
+    z-index: 0;
 
     .form {
       &-icon {
         display: block;
         margin: 0 auto;
         width: fit-content;
+      }
+
+      &-title {
+        font-size: 20px;
+        font-weight: var(--fw-bold);
+        text-align: center;
+      }
+
+      &-subhead {
+        color: var(--color-text);
+        text-align: center;
+      }
+
+      &-questions {
+        display: block;
+        list-style: none;
+        margin: 2rem 0 0 0;
+        padding: 0;
+
+        .question {
+          &:not(:last-child) {
+            margin-bottom: 3rem;
+          }
+
+          &-content {
+            display: grid;
+            grid-template-columns: 1fr 7fr;
+            gap: 0 1rem;
+          }
+
+          &-number {
+            background: linear-gradient(0deg, var(--color-btn-gradient-dark) 0%, var(--color-btn-gradient-light) 100%);
+            border-radius: 50%;
+            color: white;
+            height: var(--question-number-size);
+            font-style: normal;
+            line-height: var(--question-number-size);
+            text-align: center;
+            width: var(--question-number-size);
+          }
+
+          &-text {
+            font-weight: var(--fw-bold);
+            margin: 0;
+          }
+
+          &-options {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            .option {
+              align-items: center;
+              margin: 1.5rem 0 0 0;
+            }
+          }
+        }
       }
     }
   }
@@ -42,9 +106,16 @@
     background-color: white;
     box-shadow: 0px 0px 10px #4676c32c;
     border-radius: 44px 44px 0px 0px;
+    bottom: 0;
     padding: var(--padding-btn);
     position: sticky;
     top: calc(100dvh - var(--height-btn));
     width: calc(100% - (var(--padding-btn) * 2));
+    z-index: 1;
+
+    .btn {
+      box-shadow: 0px 0px 16px #4676c32c;
+      width: 100%;
+    }
   }
 }

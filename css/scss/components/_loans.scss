@@ -11,57 +11,57 @@
     list-style: none;
     margin: 0;
     padding: 0;
+  }
 
-    .loan {
-      border-radius: 40px;
-      box-shadow: 8px 8px 30px #4676c32c;
-      margin-bottom: 1.5rem;
+  .loan {
+    border-radius: 40px;
+    box-shadow: 8px 8px 30px #4676c32c;
+    margin-bottom: 1.5rem;
 
-      &-box {
-        cursor: pointer;
-        padding: 40px var(--padding-side) 24px var(--padding-side);
-      }
-
-      &-content {
-        align-items: center;
-        display: grid;
-        grid-template-columns: 1fr 3fr;
-        grid-template-rows: 2fr;
-        gap: 1rem 0;
-        padding: 0 var(--padding-side);
-      }
-
-      &-icon {
-        display: grid;
-        line-height: 0;
-        height: 41px;
-        place-content: center;
-        text-align: center;
-        width: 49px;
-
-        img {
-          object-fit: cover;
-          height: auto;
-          width: 100%;
-        }
-      }
-
-      &-name {
-        line-height: 24px;
-        font-size: 20px;
-        font-weight: var(--fw-bold);
-        margin: 0;
-      }
-
-      &-description {
-        color: var(--color-text);
-        grid-column: span 2;
-        line-height: 24px;
-        margin: 0;
-      }
-
-      // Loan Form Styles
-      @import "./loan-form";
+    &-box {
+      cursor: pointer;
+      padding: 40px var(--padding-side) 24px var(--padding-side);
     }
+
+    &-content {
+      align-items: center;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      grid-template-rows: 2fr;
+      gap: 1rem 0;
+      padding: 0 var(--padding-side);
+    }
+
+    &-icon {
+      display: grid;
+      line-height: 0;
+      height: 41px;
+      place-content: center;
+      text-align: center;
+      width: 49px;
+
+      img {
+        object-fit: cover;
+        height: auto;
+        width: 100%;
+      }
+    }
+
+    &-name {
+      line-height: 24px;
+      font-size: 20px;
+      font-weight: var(--fw-bold);
+      margin: 0;
+    }
+
+    &-description {
+      color: var(--color-text);
+      grid-column: span 2;
+      line-height: 24px;
+      margin: 0;
+    }
+
+    // Loan Form Styles
+    @import "./loan-form";
   }
 }

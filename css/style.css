@@ -212,16 +212,16 @@ strong {
   margin: 0;
   padding: 0;
 }
-.loans-list .loan {
+.loans .loan {
   border-radius: 40px;
   box-shadow: 8px 8px 30px rgba(70, 118, 195, 0.1725490196);
   margin-bottom: 1.5rem;
 }
-.loans-list .loan-box {
+.loans .loan-box {
   cursor: pointer;
   padding: 40px var(--padding-side) 24px var(--padding-side);
 }
-.loans-list .loan-content {
+.loans .loan-content {
   align-items: center;
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -229,7 +229,7 @@ strong {
   gap: 1rem 0;
   padding: 0 var(--padding-side);
 }
-.loans-list .loan-icon {
+.loans .loan-icon {
   display: grid;
   line-height: 0;
   height: 41px;
@@ -237,33 +237,33 @@ strong {
   text-align: center;
   width: 49px;
 }
-.loans-list .loan-icon img {
+.loans .loan-icon img {
   object-fit: cover;
   height: auto;
   width: 100%;
 }
-.loans-list .loan-name {
+.loans .loan-name {
   line-height: 24px;
   font-size: 20px;
   font-weight: var(--fw-bold);
   margin: 0;
 }
-.loans-list .loan-description {
+.loans .loan-description {
   color: var(--color-text);
   grid-column: span 2;
   line-height: 24px;
   margin: 0;
 }
-.loans-list .loan-form {
+.loans .loan-form {
   margin-top: 1.5rem;
 }
-.loans-list .loan-form.calculator, .loans-list .loan-form.information {
+.loans .loan-form.calculator, .loans .loan-form.information {
   display: none;
 }
-.loans-list .loan-form.information {
+.loans .loan-form.information {
   padding-top: 0.1rem;
 }
-.loans-list .loan-form-group {
+.loans .loan-form-group {
   background-color: var(--color-bg-input);
   border-radius: 18px;
   box-shadow: inset 0px 0px 10px rgba(70, 118, 195, 0.1725490196);
@@ -272,10 +272,10 @@ strong {
   position: relative;
   width: calc(100% - 32px);
 }
-.loans-list .loan-form-group:not(:last-child) {
+.loans .loan-form-group:not(:last-child) {
   margin-bottom: var(--padding-side);
 }
-.loans-list .loan-form-group label {
+.loans .loan-form-group label {
   color: var(--color-label);
   cursor: pointer;
   font-size: 16px;
@@ -284,7 +284,7 @@ strong {
   transform: translateY(-50%);
   transition: all 0.1s ease-in-out;
 }
-.loans-list .loan-form-group input {
+.loans .loan-form-group input {
   appearance: none;
   background: none;
   border: none;
@@ -296,36 +296,36 @@ strong {
   margin-top: var(--padding-side);
   width: 100%;
 }
-.loans-list .loan-form-group input:focus, .loans-list .loan-form-group input:valid {
+.loans .loan-form-group input:focus, .loans .loan-form-group input:valid {
   outline: none;
 }
-.loans-list .loan-form-group input:focus ~ label, .loans-list .loan-form-group input:valid ~ label {
+.loans .loan-form-group input:focus ~ label, .loans .loan-form-group input:valid ~ label {
   font-size: 12px;
   top: 16px;
 }
-.loans-list .loan-form-group input[type=number] {
+.loans .loan-form-group input[type=number] {
   -moz-appearance: textfield;
 }
-.loans-list .loan-form-group input[type=number]::-webkit-outer-spin-button, .loans-list .loan-form-group input[type=number]::-webkit-inner-spin-button {
+.loans .loan-form-group input[type=number]::-webkit-outer-spin-button, .loans .loan-form-group input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-.loans-list .loan-form-group.has-icon {
+.loans .loan-form-group.has-icon {
   align-items: center;
   display: grid;
   grid-template-columns: 1fr 5fr;
 }
-.loans-list .loan-form-group.has-icon i {
+.loans .loan-form-group.has-icon i {
   color: var(--color-text);
   font-size: 24px;
 }
-.loans-list .loan-form-range {
+.loans .loan-form-range {
   border-radius: 8px;
   margin: -1rem 0 0.5rem 0;
   padding: 4px;
   position: relative;
 }
-.loans-list .loan-form-range::before {
+.loans .loan-form-range::before {
   content: "";
   display: block;
   background: #e8eeff;
@@ -339,7 +339,7 @@ strong {
   transform: translateY(-48%);
   z-index: 0;
 }
-.loans-list .loan-form-range input[type=range] {
+.loans .loan-form-range input[type=range] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -353,7 +353,7 @@ strong {
   width: 100%;
   z-index: 1;
 }
-.loans-list .loan-form-range input[type=range]::-webkit-slider-thumb {
+.loans .loan-form-range input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   height: 48px;
@@ -367,7 +367,7 @@ strong {
   width: 48px;
   border-image: linear-gradient(90deg, var(--color-blue-light) 50%, transparent 0) 0 1/calc(50% - 4px) 100vw/0 100vw;
 }
-.loans-list .loan-form-range input[type=range]::-moz-range-thumb {
+.loans .loan-form-range input[type=range]::-moz-range-thumb {
   -moz-appearance: none;
   appearance: none;
   height: 48px;
@@ -380,24 +380,25 @@ strong {
   width: 48px;
   border-image: linear-gradient(90deg, var(--color-blue-light) 50%, transparent 0) 0 1/calc(50% - 4px) 100vw/0 100vw;
 }
-.loans-list .loan-form-range input[type=range].icon-money::-webkit-slider-thumb {
+.loans .loan-form-range input[type=range].icon-money::-webkit-slider-thumb {
   background: url(../images/icon-range-amount.png) no-repeat;
 }
-.loans-list .loan-form-range input[type=range].icon-money::-moz-range-thumb {
+.loans .loan-form-range input[type=range].icon-money::-moz-range-thumb {
   background: url(../images/icon-range-amount.png) no-repeat;
 }
-.loans-list .loan-form-range input[type=range].icon-clock::-webkit-slider-thumb {
+.loans .loan-form-range input[type=range].icon-clock::-webkit-slider-thumb {
   background: url(../images/icon-range-clock.png) no-repeat;
 }
-.loans-list .loan-form-range input[type=range].icon-clock::-moz-range-thumb {
+.loans .loan-form-range input[type=range].icon-clock::-moz-range-thumb {
   background: url(../images/icon-range-clock.png) no-repeat;
 }
-.loans-list .loan-form-checkbox {
+.loans .loan-form-checkbox {
   display: grid;
   grid-template-columns: 1fr 5fr;
   margin: 2rem 0 1.5rem 0;
 }
-.loans-list .loan-form-checkbox input[type=checkbox] {
+.loans .loan-form-checkbox input[type=checkbox],
+.loans .loan-form-checkbox input[type=radio] {
   appearance: none;
   border: 2px solid var(--color-blue-light);
   border-radius: 50%;
@@ -405,44 +406,46 @@ strong {
   height: 24px;
   width: 24px;
 }
-.loans-list .loan-form-checkbox input[type=checkbox]:checked {
+.loans .loan-form-checkbox input[type=checkbox]:checked,
+.loans .loan-form-checkbox input[type=radio]:checked {
   background-color: var(--color-blue-light);
   color: white;
   text-align: center;
   line-height: 20px;
 }
-.loans-list .loan-form-checkbox input[type=checkbox]:checked::before {
+.loans .loan-form-checkbox input[type=checkbox]:checked::before,
+.loans .loan-form-checkbox input[type=radio]:checked::before {
   content: "\f00c";
   display: block;
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
 }
-.loans-list .loan-form-checkbox a {
+.loans .loan-form-checkbox a {
   color: var(--color-blue-light);
 }
-.loans-list .loan-form-result {
+.loans .loan-form-result {
   text-align: center;
 }
-.loans-list .loan-form-result .result-fee {
+.loans .loan-form-result .result-fee {
   font-size: 32px;
   font-weight: var(--fw-bold);
   margin: 0;
 }
-.loans-list .loan-form-result .result-text {
+.loans .loan-form-result .result-text {
   color: var(--color-blue-light);
   font-weight: var(--fw-bold);
   margin: 0;
 }
-.loans-list .loan-form-result .result-disclaimer {
+.loans .loan-form-result .result-disclaimer {
   color: var(--color-text);
   margin: 1.5rem auto;
   width: 85%;
 }
-.loans-list .loan-form-buttons {
+.loans .loan-form-buttons {
   display: grid;
   grid-template-columns: 1fr;
 }
-.loans-list .loan-form-buttons .btn:not(:last-child) {
+.loans .loan-form-buttons .btn:not(:last-child) {
   margin-bottom: 1rem;
 }
 
@@ -451,6 +454,7 @@ strong {
   --padding-btn: 20px;
   --padding-form: 28px;
   --height-btn: 88px;
+  --question-number-size: 32px;
   background-color: var(--color-bg-modal);
   position: fixed;
   bottom: 0;
@@ -470,21 +474,79 @@ strong {
   position: sticky;
   top: 0;
   width: calc(100% - var(--padding-steps) * 2);
+  z-index: 1;
 }
 .verification-form {
   padding: var(--padding-form);
+  padding-bottom: var(--height-btn);
+  position: relative;
+  overflow-y: auto;
+  height: 80dvh;
+  z-index: 0;
 }
 .verification-form .form-icon {
   display: block;
   margin: 0 auto;
   width: fit-content;
 }
+.verification-form .form-title {
+  font-size: 20px;
+  font-weight: var(--fw-bold);
+  text-align: center;
+}
+.verification-form .form-subhead {
+  color: var(--color-text);
+  text-align: center;
+}
+.verification-form .form-questions {
+  display: block;
+  list-style: none;
+  margin: 2rem 0 0 0;
+  padding: 0;
+}
+.verification-form .form-questions .question:not(:last-child) {
+  margin-bottom: 3rem;
+}
+.verification-form .form-questions .question-content {
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  gap: 0 1rem;
+}
+.verification-form .form-questions .question-number {
+  background: linear-gradient(0deg, var(--color-btn-gradient-dark) 0%, var(--color-btn-gradient-light) 100%);
+  border-radius: 50%;
+  color: white;
+  height: var(--question-number-size);
+  font-style: normal;
+  line-height: var(--question-number-size);
+  text-align: center;
+  width: var(--question-number-size);
+}
+.verification-form .form-questions .question-text {
+  font-weight: var(--fw-bold);
+  margin: 0;
+}
+.verification-form .form-questions .question-options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.verification-form .form-questions .question-options .option {
+  align-items: center;
+  margin: 1.5rem 0 0 0;
+}
 .verification-button {
   background-color: white;
   box-shadow: 0px 0px 10px rgba(70, 118, 195, 0.1725490196);
   border-radius: 44px 44px 0px 0px;
+  bottom: 0;
   padding: var(--padding-btn);
   position: sticky;
   top: calc(100dvh - var(--height-btn));
   width: calc(100% - var(--padding-btn) * 2);
+  z-index: 1;
+}
+.verification-button .btn {
+  box-shadow: 0px 0px 16px rgba(70, 118, 195, 0.1725490196);
+  width: 100%;
 }

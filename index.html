@@ -6,6 +6,14 @@
     <title>Knowi</title>
     <link
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css"
+    />
+    <link
+      rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/font-proxima-nova@1.0.1/style.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
@@ -61,19 +69,53 @@
 
               <div class="loan-form calculator">
                 <div class="loan-form-group">
-                  <input type="text" id="amount" autocomplete="off" required />
+                  <input
+                    type="text"
+                    id="amount"
+                    name="amount"
+                    autocomplete="off"
+                    required
+                    value="$100.000.000"
+                  />
                   <label for="amount">Monto</label>
+                </div>
+
+                <div class="loan-form-range">
+                  <input
+                    type="range"
+                    name="amount-range"
+                    id="amount-range"
+                    value="100"
+                    min="1"
+                    max="100"
+                    class="icon-money"
+                  />
                 </div>
 
                 <div class="loan-form-group">
                   <input
                     type="number"
                     id="term"
+                    name="term"
                     autocomplete="off"
-                    min="1"
+                    min="24"
+                    max="84"
                     required
+                    value="48"
                   />
                   <label for="term">Plazo (meses)</label>
+                </div>
+
+                <div class="loan-form-range">
+                  <input
+                    type="range"
+                    name="term-range"
+                    id="term-range"
+                    value="48"
+                    min="12"
+                    max="84"
+                    class="icon-clock"
+                  />
                 </div>
 
                 <div class="loan-form-result">
@@ -90,6 +132,43 @@
                 <div class="loan-form-buttons">
                   <button class="btn btn-primary">¡Lo quiero!</button>
                   <button class="btn btn-light">Simular otro producto</button>
+                </div>
+              </div>
+
+              <div class="loan-form information">
+                <p class="loans-title">Para comenza unos <strong>datos iniciales</strong></p>
+
+                <div class="loan-form-group has-icon">
+                  <i class="fa fa-id-card"></i>
+                  <div class="input">
+                    <input type="number" id="cedula" min="0" required />
+                    <label for="cedula">Cédula</label>
+                  </div>
+                </div>
+
+                <div class="loan-form-group has-icon">
+                  <i class="fa fa-user"></i>
+                  <div class="input">
+                    <input type="text" id="lastname" required />
+                    <label for="lastname">Primer apellido</label>
+                  </div>
+                </div>
+
+                <div class="loan-form-group has-icon">
+                  <i class="fa fa-mobile-screen-button"></i>
+                  <div class="input">
+                    <input type="number" id="phone" min="0" required />
+                    <label for="phone">Celular</label>
+                  </div>
+                </div>
+
+                <div class="loan-form-checkbox">
+                  <input type="checkbox" name="terms" id="terms">
+                  <label for="terms">Acepto los <a href="#">Términos y Condiciones</a> y la <a href="#">Política de tratamiento de datos</a></label>
+                </div>
+
+                <div class="loan-form-buttons">
+                  <button class="btn btn-primary" id="btn-information" disabled>¡Comencemos!</button>
                 </div>
               </div>
             </div>
@@ -128,6 +207,26 @@
           </li>
         </ul>
       </section>
+
+      <section class="verification">
+        <div class="verification-box">
+          <div class="verification-steps">
+            1-2-3
+          </div>
+  
+          <div class="verification-form">
+            <picture class="form-icon">
+              <img src="images/icon-person.png" alt="person">
+            </picture> 
+          </div>
+
+          <div class="verification-button">
+            <div class="btn btn-primary">Continuar</div>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <script src="js/scripts.js" async></script>
   </body>
 </html>

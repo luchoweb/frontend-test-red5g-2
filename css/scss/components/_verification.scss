@@ -1,0 +1,50 @@
+.verification {
+  --padding-steps: 12px;
+  --padding-btn: 20px;
+  --padding-form: 28px;
+  --height-btn: 88px;
+
+  background-color: var(--color-bg-modal);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 9;
+
+  &-box {
+    position: relative;
+    height: 100%;
+  }
+
+  &-steps {
+    background-color: white;
+    border-radius: 0px 0px 36px 44px;
+    padding: var(--padding-steps);
+    position: sticky;
+    top: 0;
+    width: calc(100% - (var(--padding-steps) * 2));
+  }
+
+  &-form {
+    padding: var(--padding-form);
+
+    .form {
+      &-icon {
+        display: block;
+        margin: 0 auto;
+        width: fit-content;
+      }
+    }
+  }
+
+  &-button {
+    background-color: white;
+    box-shadow: 0px 0px 10px #4676c32c;
+    border-radius: 44px 44px 0px 0px;
+    padding: var(--padding-btn);
+    position: sticky;
+    top: calc(100dvh - var(--height-btn));
+    width: calc(100% - (var(--padding-btn) * 2));
+  }
+}

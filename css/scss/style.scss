@@ -4,10 +4,12 @@
   --ff-body: "Proxima Nova Rg", sans-serif;
 
   --color-bg: #fafbff;
+  --color-bg-modal: #f6f8ff;
   --color-bg-blue: #ebf0ff;
   --color-bg-box: #f8f9ff;
   --color-bg-input: #e8eeff;
   --color-shadow: #4676c32c;
+  --color-disabled: #dfe3ed;
   --color-bg-disabled: #00000029;
   --color-dark: #363c52;
   --color-text: #818cb4;
@@ -28,6 +30,8 @@ body {
   font-weight: var(--fw-normal);
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 h1,

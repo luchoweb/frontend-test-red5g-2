@@ -5,6 +5,14 @@
   border-radius: 32px;
   cursor: pointer;
   padding: 14px 20px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+
+  &:disabled {
+    background: var(--color-disabled);
+    pointer-events: none;
+    box-shadow: none;
+  }
 
   &-primary {
     background: transparent linear-gradient(180deg, #05bcfd 0%, #0599fb 100%) 0%

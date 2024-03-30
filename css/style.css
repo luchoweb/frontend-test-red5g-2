@@ -3,10 +3,12 @@
   --fw-bold: 700;
   --ff-body: "Proxima Nova Rg", sans-serif;
   --color-bg: #fafbff;
+  --color-bg-modal: #f6f8ff;
   --color-bg-blue: #ebf0ff;
   --color-bg-box: #f8f9ff;
   --color-bg-input: #e8eeff;
   --color-shadow: #4676c32c;
+  --color-disabled: #dfe3ed;
   --color-bg-disabled: #00000029;
   --color-dark: #363c52;
   --color-text: #818cb4;
@@ -26,6 +28,8 @@ body {
   font-weight: var(--fw-normal);
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 h1,
@@ -168,6 +172,33 @@ strong {
   text-shadow: 0px 4px 15px rgba(0, 157, 255, 0.3215686275);
 }
 
+.btn {
+  appearance: none;
+  background: none;
+  border: none;
+  border-radius: 32px;
+  cursor: pointer;
+  padding: 14px 20px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+.btn:disabled {
+  background: var(--color-disabled);
+  pointer-events: none;
+  box-shadow: none;
+}
+.btn-primary {
+  background: transparent linear-gradient(180deg, #05bcfd 0%, #0599fb 100%) 0% 0% no-repeat padding-box;
+  box-shadow: 0px 16px 16px rgba(0, 122, 248, 0.1607843137);
+  color: white;
+  font-weight: var(--fw-bold);
+}
+.btn-light {
+  background-color: white;
+  box-shadow: 0px 16px 16px rgba(70, 118, 195, 0.1725490196);
+  color: var(--color-blue);
+}
+
 .loans {
   padding: 0 var(--padding-side);
   padding-bottom: var(--padding-side);
@@ -224,7 +255,13 @@ strong {
   margin: 0;
 }
 .loans-list .loan-form {
-  margin: 1rem 0;
+  margin-top: 1.5rem;
+}
+.loans-list .loan-form.calculator, .loans-list .loan-form.information {
+  display: none;
+}
+.loans-list .loan-form.information {
+  padding-top: 0.1rem;
 }
 .loans-list .loan-form-group {
   background-color: var(--color-bg-input);
@@ -240,6 +277,7 @@ strong {
 }
 .loans-list .loan-form-group label {
   color: var(--color-label);
+  cursor: pointer;
   font-size: 16px;
   position: absolute;
   top: 50%;
@@ -264,6 +302,123 @@ strong {
 .loans-list .loan-form-group input:focus ~ label, .loans-list .loan-form-group input:valid ~ label {
   font-size: 12px;
   top: 16px;
+}
+.loans-list .loan-form-group input[type=number] {
+  -moz-appearance: textfield;
+}
+.loans-list .loan-form-group input[type=number]::-webkit-outer-spin-button, .loans-list .loan-form-group input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.loans-list .loan-form-group.has-icon {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+.loans-list .loan-form-group.has-icon i {
+  color: var(--color-text);
+  font-size: 24px;
+}
+.loans-list .loan-form-range {
+  border-radius: 8px;
+  margin: -1rem 0 0.5rem 0;
+  padding: 4px;
+  position: relative;
+}
+.loans-list .loan-form-range::before {
+  content: "";
+  display: block;
+  background: #e8eeff;
+  border-radius: 8px;
+  box-shadow: inset 0px 0px 10px rgba(70, 118, 195, 0.1725490196);
+  height: 16px;
+  position: absolute;
+  top: 48%;
+  left: 0;
+  right: 0;
+  transform: translateY(-48%);
+  z-index: 0;
+}
+.loans-list .loan-form-range input[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  height: 60px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+.loans-list .loan-form-range input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 48px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0px 3px 8px rgba(70, 118, 195, 0.1725490196);
+  transition: 0.3s;
+  position: relative;
+  background-color: var(--color-blue-light);
+  width: 48px;
+  border-image: linear-gradient(90deg, var(--color-blue-light) 50%, transparent 0) 0 1/calc(50% - 4px) 100vw/0 100vw;
+}
+.loans-list .loan-form-range input[type=range]::-moz-range-thumb {
+  -moz-appearance: none;
+  appearance: none;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0px 3px 8px rgba(70, 118, 195, 0.1725490196);
+  transition: 0.3s;
+  position: relative;
+  background: none;
+  width: 48px;
+  border-image: linear-gradient(90deg, var(--color-blue-light) 50%, transparent 0) 0 1/calc(50% - 4px) 100vw/0 100vw;
+}
+.loans-list .loan-form-range input[type=range].icon-money::-webkit-slider-thumb {
+  background: url(../images/icon-range-amount.png) no-repeat;
+}
+.loans-list .loan-form-range input[type=range].icon-money::-moz-range-thumb {
+  background: url(../images/icon-range-amount.png) no-repeat;
+}
+.loans-list .loan-form-range input[type=range].icon-clock::-webkit-slider-thumb {
+  background: url(../images/icon-range-clock.png) no-repeat;
+}
+.loans-list .loan-form-range input[type=range].icon-clock::-moz-range-thumb {
+  background: url(../images/icon-range-clock.png) no-repeat;
+}
+.loans-list .loan-form-checkbox {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  margin: 2rem 0 1.5rem 0;
+}
+.loans-list .loan-form-checkbox input[type=checkbox] {
+  appearance: none;
+  border: 2px solid var(--color-blue-light);
+  border-radius: 50%;
+  box-shadow: 0px 3px 6px rgba(0, 223, 255, 0.2509803922);
+  height: 24px;
+  width: 24px;
+}
+.loans-list .loan-form-checkbox input[type=checkbox]:checked {
+  background-color: var(--color-blue-light);
+  color: white;
+  text-align: center;
+  line-height: 20px;
+}
+.loans-list .loan-form-checkbox input[type=checkbox]:checked::before {
+  content: "\f00c";
+  display: block;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+.loans-list .loan-form-checkbox a {
+  color: var(--color-blue-light);
 }
 .loans-list .loan-form-result {
   text-align: center;
@@ -291,22 +446,45 @@ strong {
   margin-bottom: 1rem;
 }
 
-.btn {
-  appearance: none;
-  background: none;
-  border: none;
-  border-radius: 32px;
-  cursor: pointer;
-  padding: 14px 20px;
+.verification {
+  --padding-steps: 12px;
+  --padding-btn: 20px;
+  --padding-form: 28px;
+  --height-btn: 88px;
+  background-color: var(--color-bg-modal);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 9;
 }
-.btn-primary {
-  background: transparent linear-gradient(180deg, #05bcfd 0%, #0599fb 100%) 0% 0% no-repeat padding-box;
-  box-shadow: 0px 16px 16px rgba(0, 122, 248, 0.1607843137);
-  color: white;
-  font-weight: var(--fw-bold);
+.verification-box {
+  position: relative;
+  height: 100%;
 }
-.btn-light {
+.verification-steps {
   background-color: white;
-  box-shadow: 0px 16px 16px rgba(70, 118, 195, 0.1725490196);
-  color: var(--color-blue);
+  border-radius: 0px 0px 36px 44px;
+  padding: var(--padding-steps);
+  position: sticky;
+  top: 0;
+  width: calc(100% - var(--padding-steps) * 2);
+}
+.verification-form {
+  padding: var(--padding-form);
+}
+.verification-form .form-icon {
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+}
+.verification-button {
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(70, 118, 195, 0.1725490196);
+  border-radius: 44px 44px 0px 0px;
+  padding: var(--padding-btn);
+  position: sticky;
+  top: calc(100dvh - var(--height-btn));
+  width: calc(100% - var(--padding-btn) * 2);
 }

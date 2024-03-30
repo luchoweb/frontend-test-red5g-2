@@ -2,11 +2,26 @@
   --fw-normal: 400;
   --fw-bold: 700;
 
-  --color-bg: #FAFBFF;
+  --color-bg: #fafbff;
+  --color-bg-blue: #ebf0ff;
+  --color-bg-box: #f8f9ff;
+  --color-bg-input: #e8eeff;
+  --color-shadow: #4676c32c;
+  --color-bg-disabled: #00000029;
+  --color-dark: #363c52;
+  --color-text: #818cb4;
+  --color-label: #506698;
+  --color-blue: #007af8;
+  --color-blue-light: #00b0f4;
+  --color-btn-gradient-light: #05bcfd;
+  --color-btn-gradient-dark: #0599fb;
+
+  --padding-side: 20px;
 }
 
 body {
   background-color: var(--color-bg);
+  color: var(--color-dark);
   font-family: "Proxima Nova Rg", sans-serif;
   font-size: 16px;
   font-weight: var(--fw-normal);
@@ -25,4 +40,19 @@ strong {
   font-weight: var(--fw-bold);
 }
 
-@import "./components/header";
+.container {
+  background: var(--color-bg);
+  background: linear-gradient(
+    0deg,
+    var(--color-bg-blue) 0%,
+    var(--color-bg) 100%
+  );
+  height: 100%;
+  margin: 0 auto;
+  max-width: 430px;
+  min-height: 100dvh;
+  overflow: hidden;
+  width: 100%;
+}
+
+@import "./components/style";

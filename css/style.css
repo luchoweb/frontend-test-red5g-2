@@ -595,10 +595,8 @@ strong {
 }
 .verification-form {
   padding: var(--height-btn) var(--padding-form);
-  position: relative;
   overflow-y: auto;
   height: calc(100dvh - var(--height-btn) * 2);
-  z-index: 0;
 }
 .verification-form .form-icon {
   display: block;

@@ -359,6 +359,7 @@ strong {
 }
 .loans .loan-form-group input[type=number] {
   -moz-appearance: textfield;
+  appearance: none;
 }
 .loans .loan-form-group input[type=number]::-webkit-outer-spin-button, .loans .loan-form-group input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;

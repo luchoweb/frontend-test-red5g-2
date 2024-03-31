@@ -63,6 +63,7 @@
 
       &[type="number"] {
         -moz-appearance: textfield;
+        appearance: none;
 
         &::-webkit-outer-spin-button,
         &::-webkit-inner-spin-button {

@@ -49,7 +49,7 @@ strong {
 
 .container {
   background: var(--color-bg);
-  background: linear-gradient(0deg, var(--color-bg-blue) 0%, var(--color-bg) 100%);
+  background: linear-gradient(0deg, var(--color-bg-blue) 50%, var(--color-bg) 100%);
   height: 100%;
   margin: 0 auto;
   max-width: 430px;
@@ -249,6 +249,7 @@ strong {
   padding: 0;
 }
 .loans .loan {
+  background-color: var(--color-bg-box);
   border-radius: 40px;
   box-shadow: 8px 8px 30px rgba(70, 118, 195, 0.1725490196);
   margin-bottom: 1.5rem;
@@ -257,10 +258,10 @@ strong {
   transition: all 0.2s ease-in-out;
 }
 .loans .loan.hidden {
-  opacity: 0;
   overflow: hidden;
+  opacity: 0;
   max-height: 0;
-  margin-bottom: 0;
+  animation: hiddenLoan 1s ease-in-out forwards;
 }
 .loans .loan.opened {
   max-height: fit-content;
@@ -303,16 +304,15 @@ strong {
   margin: 0;
 }
 .loans .loan-form {
-  margin-top: 1.5rem;
   overflow: hidden;
-  transition: all 0.2s ease-in-out;
 }
 .loans .loan-form.calculator, .loans .loan-form.information {
+  opacity: 0;
   max-height: 0;
 }
 .loans .loan-form.calculator.opened, .loans .loan-form.information.opened {
-  max-height: 1000px;
-  overflow: unset;
+  margin-top: 1.5rem;
+  animation: formOpened 1s ease-in-out 0.5s forwards;
 }
 .loans .loan-form.information {
   padding-top: 0.1rem;
@@ -751,5 +751,28 @@ strong {
   }
   100% {
     left: 4.5rem;
+  }
+}
+@keyframes formOpened {
+  0% {
+    opacity: 0;
+    max-height: 0;
+  }
+  100% {
+    opacity: 1;
+    max-height: 1000px;
+    overflow: unset;
+  }
+}
+@keyframes hiddenLoan {
+  0% {
+    opacity: 1;
+    max-height: 1000px;
+    margin-bottom: 1.5rem;
+  }
+  100% {
+    opacity: 0;
+    max-height: 0;
+    margin-bottom: 1.5rem;
   }
 }

@@ -1,15 +1,14 @@
 &-form {
-  margin-top: 1.5rem;
   overflow: hidden;
-  transition: all 0.2s ease-in-out;
 
   &.calculator,
   &.information {
+    opacity: 0;
     max-height: 0;
 
     &.opened {
-      max-height: 1000px;
-      overflow: unset;
+      margin-top: 1.5rem;
+      animation: formOpened 1s ease-in-out .5s forwards;
     }
   }
 

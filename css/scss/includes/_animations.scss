@@ -99,3 +99,30 @@
     left: 4.5rem;
   }
 }
+
+@keyframes formOpened {
+  0% {
+    opacity: 0;
+    max-height: 0;
+  }
+
+  100% {
+    opacity: 1;
+    max-height: 1000px;
+    overflow: unset;
+  }
+}
+
+@keyframes hiddenLoan {
+  0% {
+    opacity: 1;
+    max-height: 1000px;
+    margin-bottom: 1.5rem;
+  }
+
+  100% {
+    opacity: 0;
+    max-height: 0;
+    margin-bottom: 1.5rem;
+  }
+}

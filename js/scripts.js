@@ -1,4 +1,15 @@
 const main = {
+  elements: {
+    loans: document.querySelectorAll("li.loan"),
+    buttons: {
+      cancel: document.querySelectorAll(".btn-cancel"),
+      submit: document.querySelectorAll(".btn-submit"),
+    },
+    verification: {
+      modal: document.querySelector(".verification.modal"),
+      btnBack: document.querySelector(".step-back"),
+    },
+  },
   methods: {
     checkTerms: () => {
       const termsCheckbox = document.getElementById("terms");
@@ -20,8 +31,8 @@ const main = {
         `.loan-form.${formType}[data-loan="${loanType}"]`
       );
 
-      loanBoxes.forEach(loan => {
-        if(loan.dataset.type !== loanType) {
+      loanBoxes.forEach((loan) => {
+        if (loan.dataset.type !== loanType) {
           loan.classList.add("hidden");
         }
       });
@@ -33,54 +44,46 @@ const main = {
       const hiddenLoanBoxes = document.querySelectorAll(".loan.hidden");
       const openedLoanBox = document.querySelector(".loan.opened");
       const formOpened = document.querySelector(`.loan-form.opened`);
-      
-      hiddenLoanBoxes.forEach(loanBox => {
+
+      hiddenLoanBoxes.forEach((loanBox) => {
         loanBox.classList.remove("hidden");
       });
 
-      openedLoanBox.classList.remove("opened")
+      openedLoanBox.classList.remove("opened");
       formOpened.classList.remove("opened");
     },
     goTop: () => {
       const title = document.querySelector(".loans-title");
       window.scrollTo(0, title.offsetTop);
-    }
+    },
   },
   onInit: () => {
     main.methods.checkTerms();
 
-    const loans = document.querySelectorAll("li.loan");
-    for (const loan of loans) {
+    for (const loan of main.elements.loans) {
       loan.addEventListener("click", (event) => {
         event.stopPropagation();
         main.methods.openForm("calculator", loan.dataset.type);
-        main.methods.goTop();
       });
     }
 
-    const allBtnCancel = document.querySelectorAll(".btn-cancel");
-    for (const btnCancel of allBtnCancel) {
+    for (const btnCancel of main.elements.buttons.cancel) {
       btnCancel.addEventListener("click", (event) => {
         event.stopPropagation();
         main.methods.hideForm();
-        main.methods.goTop();
-      }); 
+      });
     }
 
-    const verificationModal = document.querySelector(".verification.modal");
-    const allBtnSubmit = document.querySelectorAll(".btn-submit");
-    const verificationBtnBack = document.querySelector(".step-back");
-    
-    for (const btnSubmit of allBtnSubmit) {
+    for (const btnSubmit of main.elements.buttons.submit) {
       btnSubmit.addEventListener("click", (event) => {
         event.stopPropagation();
-        verificationModal.classList.add("opened");
-      }); 
+        main.elements.verification.modal.classList.add("opened");
+      });
     }
 
-    verificationBtnBack.addEventListener("click", (event) => {
+    main.elements.verification.btnBack.addEventListener("click", (event) => {
       event.stopPropagation();
-      verificationModal.classList.remove("opened");
+      main.elements.verification.modal.classList.remove("opened");
     });
   },
 };

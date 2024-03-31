@@ -16,6 +16,7 @@
   }
 
   .loan {
+    background-color: var(--color-bg-box);
     border-radius: 40px;
     box-shadow: 8px 8px 30px #4676c32c;
     margin-bottom: 1.5rem;
@@ -24,10 +25,10 @@
     transition: all 0.2s ease-in-out;
 
     &.hidden {
-      opacity: 0;
       overflow: hidden;
+      opacity: 0;
       max-height: 0;
-      margin-bottom: 0;
+      animation: hiddenLoan 1s ease-in-out forwards;
     }
 
     &.opened {

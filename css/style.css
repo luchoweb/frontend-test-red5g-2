@@ -663,7 +663,6 @@ strong {
   bottom: 0;
   padding: var(--padding-btn);
   position: sticky;
-  top: calc(100dvh - var(--height-btn));
   width: calc(100% - var(--padding-btn) * 2);
   z-index: 1;
 }

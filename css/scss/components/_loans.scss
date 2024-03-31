@@ -1,4 +1,6 @@
 .loans {
+  animation: fadeIn 1s ease-in 4s forwards;
+  opacity: 0;
   padding: 0 var(--padding-side);
   padding-bottom: var(--padding-side);
 

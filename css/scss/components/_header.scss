@@ -6,9 +6,11 @@
   }
 
   &-top {
+    animation: header 1.5s linear 1s forwards;
+    height: 310px;
     position: relative;
     overflow: hidden;
-    height: 310px;
+    top: -500px;
     width: 100%;
 
     &-bg {
@@ -62,40 +64,60 @@
         height: 20px;
       }
 
-      &:first-child,
-      &:last-child {
+      &.left {
         left: -6rem;
         transform: rotate(45deg);
 
         .column {
-          &:nth-child(2) {
-            top: 50%;
-            left: -2.2rem;
-            position: absolute;
-            transform: translateY(-50%);
+          position: relative;
+
+          &:not(:last-child) {
+            margin-bottom: 1rem;
           }
 
-          &:last-child {
-            left: -4.5rem;
-            position: absolute;
-            bottom: 0rem;
+          &.col-1 {
+            left: -13rem;
+            animation: leftCol1st 0.5s ease-out 2.9s forwards;
+          }
+
+          &.col-2 {
+            left: -11rem;
+            animation: leftCol2nd 0.5s ease-out 2.7s forwards;
+          }
+
+          &.col-3 {
+            left: -9rem;
+            animation: leftCol3rd 0.5s ease-out 2.5s forwards;
           }
         }
       }
 
-      &:last-child {
+      &.right {
         bottom: 1.3rem;
         left: unset;
         right: -3.5rem;
         transform: rotate(-45deg);
 
         .column {
-          &:nth-child(2) {
-            left: 2.2rem;
+          position: relative;
+
+          &:not(:last-child) {
+            margin-bottom: 1rem;
           }
 
-          &:last-child {
-            left: 4.5rem;
+          &.col-1 {
+            left: 14rem;
+            animation: rightCol1st 0.5s ease-out 2.9s forwards;
+          }
+
+          &.col-2 {
+            left: 12rem;
+            animation: rightCol2nd 0.5s ease-out 2.7s forwards;
+          }
+
+          &.col-3 {
+            left: 9rem;
+            animation: rightCol3rd 0.5s ease-out 2.5s forwards;
           }
         }
       }
@@ -110,8 +132,15 @@
     height: 144px;
     overflow: hidden;
     place-content: center;
+    position: relative;
     margin: 1.5rem auto;
     width: 144px;
+
+    // Animation
+    transform: scale(2);
+    top: -9rem;
+    opacity: 0;
+    animation: logo 1s ease-in 0s forwards, logoDown 0.5s linear 2s forwards;
 
     img {
       height: auto;
@@ -123,6 +152,10 @@
     font-size: 40px;
     line-height: 48px;
     text-align: center;
+    position: relative;
+    top: -9rem;
+    opacity: 0;
+    animation: fadeIn 1s ease-in 1s forwards, logoDown 0.5s linear 2s forwards;
 
     span {
       display: block;

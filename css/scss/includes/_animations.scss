@@ -1,0 +1,101 @@
+@keyframes header {
+  0% {
+    top: -500px;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes logo {
+  0% {
+    transform: scale(2);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes logoDown {
+  0% {
+    top: -9rem;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes leftCol1st {
+  0% {
+    left: -13rem;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes leftCol2nd {
+  0% {
+    left: -11rem;
+  }
+
+  100% {
+    left: -2.2rem;
+  }
+}
+
+@keyframes leftCol3rd {
+  0% {
+    left: -9rem;
+  }
+
+  100% {
+    left: -4.5rem;
+  }
+}
+
+@keyframes rightCol1st {
+  0% {
+    left: 14rem;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes rightCol2nd {
+  0% {
+    left: 12rem;
+  }
+
+  100% {
+    left: 2.2rem;
+  }
+}
+
+@keyframes rightCol3rd {
+  0% {
+    left: 9rem;
+  }
+
+  100% {
+    left: 4.5rem;
+  }
+}

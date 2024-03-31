@@ -6,6 +6,8 @@
   --question-number-size: 32px;
 
   background-color: var(--color-bg-modal);
+  display: none;
+  place-content: center;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -13,27 +15,93 @@
   top: 0;
   z-index: 9;
 
+  .opened {
+    display: grid;
+  }
+
   &-box {
     position: relative;
     height: 100%;
+    max-width: 430px;
   }
 
   &-steps {
+    align-items: center;
     background-color: white;
     border-radius: 0px 0px 36px 44px;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
     padding: var(--padding-steps);
     position: sticky;
     top: 0;
     width: calc(100% - (var(--padding-steps) * 2));
     z-index: 1;
+
+    .step {
+      &-back {
+        appearance: none;
+        border: none;
+        background-color: transparent;
+        display: block;
+        height: fit-content;
+        margin-left: 1rem;
+        width: fit-content;
+
+        i {
+          color: var(--color-blue);
+          font-size: 20px;
+        }
+      }
+
+      &-title {
+        font-size: 14px;
+        font-weight: var(--fw-bold);
+        text-align: center;
+        margin: 0 0 .5em 0;
+      }
+
+      &-bar {
+        background-color: var(--color-bg-blue);
+        border-radius: 8px;
+        padding: 4px;
+        position: relative;
+
+        &-progress {
+          background-color: var(--color-blue-light);
+          border-radius: 8px;
+          display: block;
+          height: 8px;
+        }
+
+        &-icon {
+          background-color: white;
+          border-radius: 50%;
+          box-shadow: 0px 3px 10px #00B0F429;
+          height: 48px;
+          line-height: 60px;
+          position: absolute;
+          right: 0;
+          text-align: center;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 48px;
+        }
+      }
+
+      &-count {
+        color: var(--color-blue-light);
+        font-size: 12px;
+        text-align: center;
+        margin: 0.5em 0 0 0;
+      }
+    }
   }
 
   &-form {
-    padding: var(--padding-form);
-    padding-bottom: var(--height-btn);
+    padding: var(--height-btn) var(--padding-form);
     position: relative;
     overflow-y: auto;
-    height: 80dvh;
+    height: 78dvh;
     z-index: 0;
 
     .form {
@@ -60,6 +128,10 @@
         margin: 2rem 0 0 0;
         padding: 0;
 
+        &:last-child {
+          margin-bottom: 2rem;
+        }
+
         .question {
           &:not(:last-child) {
             margin-bottom: 3rem;
@@ -74,6 +146,7 @@
           &-number {
             background: linear-gradient(0deg, var(--color-btn-gradient-dark) 0%, var(--color-btn-gradient-light) 100%);
             border-radius: 50%;
+            box-shadow: 3px 3px 12px #00C4FFB9;
             color: white;
             height: var(--question-number-size);
             font-style: normal;
@@ -94,6 +167,7 @@
 
             .option {
               align-items: center;
+              color: var(--color-text);
               margin: 1.5rem 0 0 0;
             }
           }

@@ -456,6 +456,8 @@ strong {
   --height-btn: 88px;
   --question-number-size: 32px;
   background-color: var(--color-bg-modal);
+  display: none;
+  place-content: center;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -463,25 +465,81 @@ strong {
   top: 0;
   z-index: 9;
 }
+.verification .opened {
+  display: grid;
+}
 .verification-box {
   position: relative;
   height: 100%;
+  max-width: 430px;
 }
 .verification-steps {
+  align-items: center;
   background-color: white;
   border-radius: 0px 0px 36px 44px;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
   padding: var(--padding-steps);
   position: sticky;
   top: 0;
   width: calc(100% - var(--padding-steps) * 2);
   z-index: 1;
 }
+.verification-steps .step-back {
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  display: block;
+  height: fit-content;
+  margin-left: 1rem;
+  width: fit-content;
+}
+.verification-steps .step-back i {
+  color: var(--color-blue);
+  font-size: 20px;
+}
+.verification-steps .step-title {
+  font-size: 14px;
+  font-weight: var(--fw-bold);
+  text-align: center;
+  margin: 0 0 0.5em 0;
+}
+.verification-steps .step-bar {
+  background-color: var(--color-bg-blue);
+  border-radius: 8px;
+  padding: 4px;
+  position: relative;
+}
+.verification-steps .step-bar-progress {
+  background-color: var(--color-blue-light);
+  border-radius: 8px;
+  display: block;
+  height: 8px;
+}
+.verification-steps .step-bar-icon {
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0px 3px 10px rgba(0, 176, 244, 0.1607843137);
+  height: 48px;
+  line-height: 60px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+}
+.verification-steps .step-count {
+  color: var(--color-blue-light);
+  font-size: 12px;
+  text-align: center;
+  margin: 0.5em 0 0 0;
+}
 .verification-form {
-  padding: var(--padding-form);
-  padding-bottom: var(--height-btn);
+  padding: var(--height-btn) var(--padding-form);
   position: relative;
   overflow-y: auto;
-  height: 80dvh;
+  height: 78dvh;
   z-index: 0;
 }
 .verification-form .form-icon {
@@ -504,6 +562,9 @@ strong {
   margin: 2rem 0 0 0;
   padding: 0;
 }
+.verification-form .form-questions:last-child {
+  margin-bottom: 2rem;
+}
 .verification-form .form-questions .question:not(:last-child) {
   margin-bottom: 3rem;
 }
@@ -515,6 +576,7 @@ strong {
 .verification-form .form-questions .question-number {
   background: linear-gradient(0deg, var(--color-btn-gradient-dark) 0%, var(--color-btn-gradient-light) 100%);
   border-radius: 50%;
+  box-shadow: 3px 3px 12px rgba(0, 196, 255, 0.7254901961);
   color: white;
   height: var(--question-number-size);
   font-style: normal;
@@ -533,6 +595,7 @@ strong {
 }
 .verification-form .form-questions .question-options .option {
   align-items: center;
+  color: var(--color-text);
   margin: 1.5rem 0 0 0;
 }
 .verification-button {

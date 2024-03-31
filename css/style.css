@@ -20,6 +20,10 @@
   --padding-side: 20px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--color-bg);
   color: var(--color-dark);
@@ -216,6 +220,18 @@ strong {
   border-radius: 40px;
   box-shadow: 8px 8px 30px rgba(70, 118, 195, 0.1725490196);
   margin-bottom: 1.5rem;
+  opacity: 1;
+  max-height: 200px;
+  transition: all 0.2s ease-in-out;
+}
+.loans .loan.hidden {
+  opacity: 0;
+  overflow: hidden;
+  max-height: 0;
+  margin-bottom: 0;
+}
+.loans .loan.opened {
+  max-height: fit-content;
 }
 .loans .loan-box {
   cursor: pointer;
@@ -256,9 +272,15 @@ strong {
 }
 .loans .loan-form {
   margin-top: 1.5rem;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
 }
 .loans .loan-form.calculator, .loans .loan-form.information {
-  display: none;
+  max-height: 0;
+}
+.loans .loan-form.calculator.opened, .loans .loan-form.information.opened {
+  max-height: 1000px;
+  overflow: unset;
 }
 .loans .loan-form.information {
   padding-top: 0.1rem;
@@ -456,17 +478,20 @@ strong {
   --height-btn: 88px;
   --question-number-size: 32px;
   background-color: var(--color-bg-modal);
-  display: none;
+  display: grid;
+  opacity: 0;
   place-content: center;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   top: 0;
-  z-index: 9;
+  transition: all 0.2s ease-in-out;
+  z-index: -1;
 }
-.verification .opened {
-  display: grid;
+.verification.opened {
+  opacity: 1;
+  z-index: 9;
 }
 .verification-box {
   position: relative;

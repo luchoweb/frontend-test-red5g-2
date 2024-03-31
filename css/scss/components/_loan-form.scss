@@ -1,9 +1,16 @@
 &-form {
   margin-top: 1.5rem;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
 
   &.calculator,
   &.information {
-    display: none;
+    max-height: 0;
+
+    &.opened {
+      max-height: 1000px;
+      overflow: unset;
+    }
   }
 
   &.information {

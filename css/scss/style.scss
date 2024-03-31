@@ -22,6 +22,10 @@
   --padding-side: 20px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--color-bg);
   color: var(--color-dark);
@@ -61,3 +65,4 @@ strong {
 }
 
 @import "./components/style";
+

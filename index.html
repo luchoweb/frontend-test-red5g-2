@@ -24,7 +24,8 @@
       <header class="header">
         <div class="header-top">
           <div class="columns left">
-            <span class="column col-1"></span><span class="column col-2"></span><span class="column col-3"></span>
+            <span class="column col-1"></span><span class="column col-2"></span
+            ><span class="column col-3"></span>
           </div>
 
           <div class="header-top-bg">
@@ -32,7 +33,8 @@
           </div>
 
           <div class="columns right">
-            <span class="column col-1"></span><span class="column col-2"></span><span class="column col-3"></span>
+            <span class="column col-1"></span><span class="column col-2"></span
+            ><span class="column col-3"></span>
           </div>
         </div>
 
@@ -129,7 +131,7 @@
                 </div>
 
                 <div class="loan-form-buttons">
-                  <button class="btn btn-primary btn-submit">
+                  <button class="btn btn-primary btn-submit" data-type="house">
                     ¡Lo quiero!
                   </button>
                   <button class="btn btn-light btn-cancel">
@@ -138,7 +140,7 @@
                 </div>
               </div>
 
-              <div class="loan-form information" data-loan="house">
+              <form class="loan-form information" data-loan="house">
                 <p class="loans-title">
                   Para comenza unos <strong>datos iniciales</strong>
                 </p>
@@ -168,7 +170,7 @@
                 </div>
 
                 <div class="loan-form-checkbox">
-                  <input type="checkbox" name="terms" id="terms" />
+                  <input type="checkbox" name="terms" id="terms" required />
                   <label for="terms"
                     >Acepto los <a href="#">Términos y Condiciones</a> y la
                     <a href="#">Política de tratamiento de datos</a></label
@@ -176,11 +178,11 @@
                 </div>
 
                 <div class="loan-form-buttons">
-                  <button class="btn btn-primary" id="btn-information" disabled>
+                  <button type="button" class="btn btn-primary" id="btn-information">
                     ¡Comencemos!
                   </button>
                 </div>
-              </div>
+              </form>
             </div>
           </li>
 
@@ -500,7 +502,7 @@
                   </li>
 
                   <li class="option loan-form-checkbox">
-                    <input type="radio" name="q1" id="q1o2"required />
+                    <input type="radio" name="q1" id="q1o2" required />
                     <label for="q1o2">Bancoomeva</label>
                   </li>
 

@@ -4,6 +4,7 @@ const main = {
     buttons: {
       cancel: document.querySelectorAll(".btn-cancel"),
       submit: document.querySelectorAll(".btn-submit"),
+      information: document.querySelector("#btn-information"),
     },
     verification: {
       modal: document.querySelector(".verification.modal"),
@@ -27,18 +28,23 @@ const main = {
     openForm: (formType, loanType) => {
       const loanBoxes = document.querySelectorAll(".loan");
       const loanBox = document.querySelector(`.loan[data-type="${loanType}"]`);
+      const isOpenedFormInformation = document.querySelector(
+        `.loan-form.information.opened[data-loan="${loanType}"]`
+      );
       const form = document.querySelector(
         `.loan-form.${formType}[data-loan="${loanType}"]`
       );
 
-      loanBoxes.forEach((loan) => {
-        if (loan.dataset.type !== loanType) {
-          loan.classList.add("hidden");
-        }
-      });
+      if(!isOpenedFormInformation) {
+        loanBoxes.forEach((loan) => {
+          if (loan.dataset.type !== loanType) {
+            loan.classList.add("hidden");
+          }
+        });
 
-      loanBox.classList.add("opened");
-      form.classList.add("opened");
+        loanBox.classList.add("opened");
+        form.classList.add("opened");
+      }
     },
     hideForm: () => {
       const hiddenLoanBoxes = document.querySelectorAll(".loan.hidden");
@@ -69,8 +75,6 @@ const main = {
     },
   },
   onInit: () => {
-    main.methods.checkTerms();
-
     main.elements.loans.forEach((loan) => {
       loan.addEventListener("click", (event) => {
         event.stopPropagation();
@@ -89,8 +93,13 @@ const main = {
     main.elements.buttons.submit.forEach((btnSubmit) => {
       btnSubmit.addEventListener("click", (event) => {
         event.stopPropagation();
-        main.elements.verification.modal.classList.add("opened");
+        main.methods.hideForm();
+        main.methods.openForm("information", btnSubmit.dataset.type);
       });
+    });
+
+    main.elements.buttons.information.addEventListener("click", () => {
+      main.elements.verification.modal.classList.add("opened");
     });
 
     main.elements.verification.btnBack.addEventListener("click", (event) => {

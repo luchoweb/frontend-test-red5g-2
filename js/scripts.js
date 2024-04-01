@@ -56,34 +56,44 @@ const main = {
       const title = document.querySelector(".loans-title");
       window.scrollTo(0, title.offsetTop);
     },
+    resetVerificationForm: () => {
+      const options = document.querySelectorAll(
+        `.option input[type="radio"]:checked`
+      );
+
+      options.forEach((option) => {
+        option.checked = false;
+      });
+    },
   },
   onInit: () => {
     main.methods.checkTerms();
 
-    for (const loan of main.elements.loans) {
+    main.elements.loans.forEach((loan) => {
       loan.addEventListener("click", (event) => {
         event.stopPropagation();
         main.methods.openForm("calculator", loan.dataset.type);
       });
-    }
+    });
 
-    for (const btnCancel of main.elements.buttons.cancel) {
+    main.elements.buttons.cancel.forEach((btnCancel) => {
       btnCancel.addEventListener("click", (event) => {
         event.stopPropagation();
         main.methods.hideForm();
       });
-    }
+    });
 
-    for (const btnSubmit of main.elements.buttons.submit) {
+    main.elements.buttons.submit.forEach((btnSubmit) => {
       btnSubmit.addEventListener("click", (event) => {
         event.stopPropagation();
         main.elements.verification.modal.classList.add("opened");
       });
-    }
+    });
 
     main.elements.verification.btnBack.addEventListener("click", (event) => {
       event.stopPropagation();
       main.elements.verification.modal.classList.remove("opened");
+      main.methods.resetVerificationForm();
     });
   },
 };

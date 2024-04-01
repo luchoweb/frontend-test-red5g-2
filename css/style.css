@@ -216,16 +216,17 @@ strong {
   text-align: center;
   transition: all 0.2s ease-in-out;
 }
-.btn:disabled {
+.btn:disabled, .btn-disabled, .verification-box .btn-primary, .verification-box:valid .btn-primary {
   background: var(--color-disabled);
   pointer-events: none;
   box-shadow: none;
 }
-.btn-primary {
+.btn-primary, .verification-box:valid .btn-primary {
   background: transparent linear-gradient(180deg, #05bcfd 0%, #0599fb 100%) 0% 0% no-repeat padding-box;
   box-shadow: 0px 16px 16px rgba(0, 122, 248, 0.1607843137);
   color: white;
   font-weight: var(--fw-bold);
+  pointer-events: all;
 }
 .btn-light {
   background-color: white;

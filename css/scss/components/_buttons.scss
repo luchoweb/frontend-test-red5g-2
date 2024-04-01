@@ -8,7 +8,8 @@
   text-align: center;
   transition: all 0.2s ease-in-out;
 
-  &:disabled {
+  &:disabled,
+  &-disabled {
     background: var(--color-disabled);
     pointer-events: none;
     box-shadow: none;
@@ -20,6 +21,7 @@
     box-shadow: 0px 16px 16px #007af829;
     color: white;
     font-weight: var(--fw-bold);
+    pointer-events: all;
   }
 
   &-light {

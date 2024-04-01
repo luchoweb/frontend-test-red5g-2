@@ -27,6 +27,16 @@
     position: relative;
     height: calc(100dvh - var(--height-btn));
     max-width: 430px;
+
+    .btn-primary {
+      @extend .btn-disabled;
+    }
+
+    &:valid {
+      .btn-primary {
+        @extend .btn-primary;
+      }
+    }
   }
 
   &-steps {

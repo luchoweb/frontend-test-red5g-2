@@ -83,7 +83,6 @@ const main = {
       btnCancel.addEventListener("click", (event) => {
         event.stopPropagation();
         main.methods.hideForm();
-        main.methods.goTop();
       });
     });
 

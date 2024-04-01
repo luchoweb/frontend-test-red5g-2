@@ -23,8 +23,9 @@
   }
 
   &-box {
+    padding-bottom: var(--height-btn);
     position: relative;
-    height: 100%;
+    height: calc(100dvh - var(--height-btn));
     max-width: 430px;
   }
 
@@ -101,9 +102,9 @@
   }
 
   &-form {
-    padding: var(--height-btn) var(--padding-form);
+    padding: 0 var(--padding-form);
     overflow-y: auto;
-    height: calc(100dvh - (var(--height-btn) * 2));
+    height: calc(100dvh - var(--height-btn)* 2);
 
     .form {
       &-icon {

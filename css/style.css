@@ -527,8 +527,9 @@ strong {
   z-index: 9;
 }
 .verification-box {
+  padding-bottom: var(--height-btn);
   position: relative;
-  height: 100%;
+  height: calc(100dvh - var(--height-btn));
   max-width: 430px;
 }
 .verification-steps {
@@ -594,7 +595,7 @@ strong {
   margin: 0.5em 0 0 0;
 }
 .verification-form {
-  padding: var(--height-btn) var(--padding-form);
+  padding: 0 var(--padding-form);
   overflow-y: auto;
   height: calc(100dvh - var(--height-btn) * 2);
 }

@@ -4,7 +4,7 @@ const main = {
     buttons: {
       cancel: document.querySelectorAll(".btn-cancel"),
       submit: document.querySelectorAll(".btn-submit"),
-      information: document.querySelector("#btn-information"),
+      information: document.querySelectorAll(".btn-information"),
     },
     verification: {
       modal: document.querySelector(".verification.modal"),
@@ -35,7 +35,7 @@ const main = {
         `.loan-form.${formType}[data-loan="${loanType}"]`
       );
 
-      if(!isOpenedForm) {
+      if (!isOpenedForm) {
         loanBoxes.forEach((loan) => {
           if (loan.dataset.type !== loanType) {
             loan.classList.add("hidden");
@@ -98,8 +98,10 @@ const main = {
       });
     });
 
-    main.elements.buttons.information.addEventListener("click", () => {
-      main.elements.verification.modal.classList.add("opened");
+    main.elements.buttons.information.forEach((btnInfo) => {
+      btnInfo.addEventListener("click", () => {
+        main.elements.verification.modal.classList.add("opened");
+      });
     });
 
     main.elements.verification.btnBack.addEventListener("click", (event) => {

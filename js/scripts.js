@@ -12,19 +12,6 @@ const main = {
     },
   },
   methods: {
-    checkTerms: () => {
-      const termsCheckbox = document.getElementById("terms");
-      const btnInformation = document.getElementById("btn-information");
-
-      termsCheckbox.addEventListener("click", (event) => {
-        if (event.target.checked) {
-          btnInformation.removeAttribute("disabled");
-          return;
-        }
-
-        btnInformation.setAttribute("disabled", true);
-      });
-    },
     openForm: (formType, loanType) => {
       const loanBoxes = document.querySelectorAll(".loan");
       const loanBox = document.querySelector(`.loan[data-type="${loanType}"]`);

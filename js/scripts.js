@@ -54,7 +54,9 @@ const main = {
     },
     goTop: () => {
       const title = document.querySelector(".loans-title");
-      window.scrollTo(0, title.offsetTop);
+      setTimeout(() => {
+        window.scrollTo(0, title.offsetTop);
+      }, 1100);
     },
     resetVerificationForm: () => {
       const options = document.querySelectorAll(
@@ -73,6 +75,7 @@ const main = {
       loan.addEventListener("click", (event) => {
         event.stopPropagation();
         main.methods.openForm("calculator", loan.dataset.type);
+        main.methods.goTop();
       });
     });
 
@@ -80,6 +83,7 @@ const main = {
       btnCancel.addEventListener("click", (event) => {
         event.stopPropagation();
         main.methods.hideForm();
+        main.methods.goTop();
       });
     });
 

@@ -28,14 +28,14 @@ const main = {
     openForm: (formType, loanType) => {
       const loanBoxes = document.querySelectorAll(".loan");
       const loanBox = document.querySelector(`.loan[data-type="${loanType}"]`);
-      const isOpenedFormInformation = document.querySelector(
-        `.loan-form.information.opened[data-loan="${loanType}"]`
+      const isOpenedForm = document.querySelector(
+        `.loan-form.opened[data-loan="${loanType}"]`
       );
       const form = document.querySelector(
         `.loan-form.${formType}[data-loan="${loanType}"]`
       );
 
-      if(!isOpenedFormInformation) {
+      if(!isOpenedForm) {
         loanBoxes.forEach((loan) => {
           if (loan.dataset.type !== loanType) {
             loan.classList.add("hidden");

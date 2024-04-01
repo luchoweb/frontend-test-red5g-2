@@ -263,7 +263,7 @@
                 </div>
 
                 <div class="loan-form-buttons">
-                  <button class="btn btn-primary btn-submit">
+                  <button class="btn btn-primary btn-submit" data-type="car">
                     ¡Lo quiero!
                   </button>
                   <button class="btn btn-light btn-cancel">
@@ -272,7 +272,7 @@
                 </div>
               </div>
 
-              <div class="loan-form information" data-loan="car">
+              <form class="loan-form information" data-loan="car">
                 <p class="loans-title">
                   Para comenza unos <strong>datos iniciales</strong>
                 </p>
@@ -302,7 +302,7 @@
                 </div>
 
                 <div class="loan-form-checkbox">
-                  <input type="checkbox" name="terms" id="terms" />
+                  <input type="checkbox" name="terms" id="terms" required />
                   <label for="terms"
                     >Acepto los <a href="#">Términos y Condiciones</a> y la
                     <a href="#">Política de tratamiento de datos</a></label
@@ -310,11 +310,11 @@
                 </div>
 
                 <div class="loan-form-buttons">
-                  <button class="btn btn-primary" id="btn-information" disabled>
+                  <button type="button" class="btn btn-primary" id="btn-information">
                     ¡Comencemos!
                   </button>
                 </div>
-              </div>
+              </form>
             </div>
           </li>
 
@@ -395,7 +395,7 @@
                 </div>
 
                 <div class="loan-form-buttons">
-                  <button class="btn btn-primary btn-submit">
+                  <button class="btn btn-primary btn-submit" data-type="study">
                     ¡Lo quiero!
                   </button>
                   <button class="btn btn-light btn-cancel">
@@ -404,7 +404,7 @@
                 </div>
               </div>
 
-              <div class="loan-form information" data-loan="study">
+              <form class="loan-form information" data-loan="study">
                 <p class="loans-title">
                   Para comenza unos <strong>datos iniciales</strong>
                 </p>
@@ -434,7 +434,7 @@
                 </div>
 
                 <div class="loan-form-checkbox">
-                  <input type="checkbox" name="terms" id="terms" />
+                  <input type="checkbox" name="terms" id="terms" required />
                   <label for="terms"
                     >Acepto los <a href="#">Términos y Condiciones</a> y la
                     <a href="#">Política de tratamiento de datos</a></label
@@ -442,11 +442,11 @@
                 </div>
 
                 <div class="loan-form-buttons">
-                  <button class="btn btn-primary" id="btn-information" disabled>
+                  <button type="button" class="btn btn-primary" id="btn-information">
                     ¡Comencemos!
                   </button>
                 </div>
-              </div>
+              </form>
             </div>
           </li>
         </ul>
